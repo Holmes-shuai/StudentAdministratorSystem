@@ -5,20 +5,20 @@ import java.util.Arrays;
 
 public class Administrator {
 
-	static String msg="\t±àºÅ\tĞÕÃû\tÄêÁä\tjava\tc#\thtml\tsql\t×Ü·Ö\tÆ½¾ù·Ö";
+	static String msg="\tç¼–å·\tå§“å\tå¹´é¾„\tjava\tc#\thtml\tsql\tæ€»åˆ†\tå¹³å‡åˆ†";
 
 	Scanner Lol= new Scanner(System.in);
 
 
-	public int testInt() {     //²âÊÔÊäÈë×Ö·ûÊÇ·ñÎªintÀàĞÍ£¬²¢Â¼Èë
+	public int testInt() {     //æµ‹è¯•è¾“å…¥å­—ç¬¦æ˜¯å¦ä¸ºintç±»å‹ï¼Œå¹¶å½•å…¥
 		while(!Lol.hasNextInt()) {
-			System.out.println("ÇëÊäÈëÒ»¸ö×ÔÈ»Êı£¡");
+			System.out.println("è¯·è¾“å…¥ä¸€ä¸ªè‡ªç„¶æ•°ï¼");
 			Lol.next();	
 		}
 		return Lol.nextInt();
 	}
 
-	public boolean find(int on,Student[] air) {   //¼ì²âÄ³±àºÅÊÇ·ñÓĞÑ§Éú´æÔÚ
+	public boolean find(int on,Student[] air) {   //æ£€æµ‹æŸç¼–å·æ˜¯å¦æœ‰å­¦ç”Ÿå­˜åœ¨
 		if(0<=on&&on<air.length) {
 			for(int i=0;i<air.length;i++) {
 				if(air[i]!=null) {
@@ -34,7 +34,7 @@ public class Administrator {
 		return false;
 	}
 
-	public void export(Student[] air) { //´òÓ¡Ñ§Éú±í¸ñ
+	public void export(Student[] air) { //æ‰“å°å­¦ç”Ÿè¡¨æ ¼
 		System.out.println(msg);
 		for(int i=0;i<air.length;i++) {
 			if(air[i]!=null) {
@@ -43,7 +43,7 @@ public class Administrator {
 		}
 	}
 
-	public void create(String name,int age,Student[] air) {     //Ìí¼ÓÑ§ÉúµÄ·½·¨
+	public void create(String name,int age,Student[] air) {     //æ·»åŠ å­¦ç”Ÿçš„æ–¹æ³•
 		Student stu=new Student();
 		stu.setName(name);
 		stu.setAge(age);
@@ -51,11 +51,11 @@ public class Administrator {
 			stu.setOn(this.testAir(air));
 			air[this.testAir(air)]=stu;
 		}else {
-			System.out.println(">>ÒÑ´ïÏµÍ³×î´ó´æ´¢Ñ§ÉúÁ¿£¬ÎŞ·¨Ìí¼ÓÑ§Éú¡£");
+			System.out.println(">>å·²è¾¾ç³»ç»Ÿæœ€å¤§å­˜å‚¨å­¦ç”Ÿé‡ï¼Œæ— æ³•æ·»åŠ å­¦ç”Ÿã€‚");
 		}
 	}
 
-	public int testAir(Student[] air) {     //¼ì²âÊı×éÊÇ·ñÓĞ¿ÕÓà,²¢·µ»Ø¿ÕÓàÊı×éµÄÎ»ÖÃ
+	public int testAir(Student[] air) {     //æ£€æµ‹æ•°ç»„æ˜¯å¦æœ‰ç©ºä½™,å¹¶è¿”å›ç©ºä½™æ•°ç»„çš„ä½ç½®
 		for(int i = 0;i<air.length;i++) {
 			if(air[i]==null) {
 				return i;
@@ -64,50 +64,50 @@ public class Administrator {
 		return 999999999;
 	}
 
-	public void select(int on,Student[] air) {   //²éÕÒÄ³±àºÅÑ§ÉúµÄ·½·¨
+	public void select(int on,Student[] air) {   //æŸ¥æ‰¾æŸç¼–å·å­¦ç”Ÿçš„æ–¹æ³•
 		if(this.find(on, air)) {
 			System.out.println(msg);
 			System.out.println(air[on]);
 		}else {
-			System.out.println(">>¸Ã±àºÅµÄÑ§Éú²»´æÔÚ");
+			System.out.println(">>è¯¥ç¼–å·çš„å­¦ç”Ÿä¸å­˜åœ¨");
 		}
 	}
 
-	public void update(int on,String name,int age,Student[] air) {   //¸üĞÂÑ§Éú»ù±¾ĞÅÏ¢µÄ·½·¨
+	public void update(int on,String name,int age,Student[] air) {   //æ›´æ–°å­¦ç”ŸåŸºæœ¬ä¿¡æ¯çš„æ–¹æ³•
 		if(this.find(on, air)) {
 			air[on].setAge(age);
 			air[on].setName(name);
 			System.out.println(msg);
 			System.out.println(air[on]);
 		}else {
-			System.out.println(">>¸Ã±àºÅµÄÑ§Éú²»´æÔÚ");
+			System.out.println(">>è¯¥ç¼–å·çš„å­¦ç”Ÿä¸å­˜åœ¨");
 		}
 	}
 
-	public void delete(int on,Student[] air) {  //É¾³ıÑ§ÉúµÄ·½·¨
+	public void delete(int on,Student[] air) {  //åˆ é™¤å­¦ç”Ÿçš„æ–¹æ³•
 		if(this.find(on, air)) {
 			air[on]=null;
-			System.out.println(">>ÒÑÉ¾³ı");
+			System.out.println(">>å·²åˆ é™¤");
 		}else {
-			System.out.println(">>¸Ã±àºÅµÄÑ§Éú²»´æÔÚ");
+			System.out.println(">>è¯¥ç¼–å·çš„å­¦ç”Ÿä¸å­˜åœ¨");
 		}
 	}
 
-	public void input(int on,Student[] air) {  //ÊäÈëÑ§Éú³É¼¨ĞÅÏ¢µÄ·½·¨
+	public void input(int on,Student[] air) {  //è¾“å…¥å­¦ç”Ÿæˆç»©ä¿¡æ¯çš„æ–¹æ³•
 		if(this.find(on, air)) {
-			System.out.println("ÇëÊäÈëÄãµÄjava³É¼¨£¡");
+			System.out.println("è¯·è¾“å…¥ä½ çš„javaæˆç»©ï¼");
 			air[on].setJava(this.testInt());
-			System.out.println("ÇëÊäÈëÄãµÄC#³É¼¨£¡");
+			System.out.println("è¯·è¾“å…¥ä½ çš„C#æˆç»©ï¼");
 			air[on].setC_shar(this.testInt());
-			System.out.println("ÇëÊäÈëÄãµÄhtml³É¼¨£¡");
+			System.out.println("è¯·è¾“å…¥ä½ çš„htmlæˆç»©ï¼");
 			air[on].setHtml(this.testInt());
-			System.out.println("ÇëÊäÈëÄãµÄsql³É¼¨£¡");
+			System.out.println("è¯·è¾“å…¥ä½ çš„sqlæˆç»©ï¼");
 			air[on].setSql(this.testInt());
 			air[on].setSum();
 			air[on].setAvg();
-			System.out.println(">>Â¼ÈëÍê³É");
+			System.out.println(">>å½•å…¥å®Œæˆ");
 		}else {
-			System.out.println(">>¸Ã±àºÅµÄÑ§Éú²»´æÔÚ");
+			System.out.println(">>è¯¥ç¼–å·çš„å­¦ç”Ÿä¸å­˜åœ¨");
 		}
 	}
 
@@ -115,8 +115,8 @@ public class Administrator {
 		switch(subject) {
 		case 1:
 			for(int i=0;i<air.length;i++) {
-					for(int j=i+1;j<air.length;j++) {
-						if(air[i]!=null&&air[j]!=null) {
+				for(int j=i+1;j<air.length;j++) {
+					if(air[i]!=null&&air[j]!=null) {
 						if(air[i].getJava()<air[j].getJava()) {
 							Student a=air[i];
 							air[i]=air[j];
@@ -128,8 +128,8 @@ public class Administrator {
 			break;
 		case 2:
 			for(int i=0;i<air.length;i++) {
-					for(int j=i+1;j<air.length;j++) {
-						if(air[i]!=null&&air[j]!=null) {
+				for(int j=i+1;j<air.length;j++) {
+					if(air[i]!=null&&air[j]!=null) {
 						if(air[i].getC_shar()<air[j].getC_shar()) {
 							Student a=air[i];
 							air[i]=air[j];
@@ -141,8 +141,8 @@ public class Administrator {
 			break;
 		case 3:
 			for(int i=0;i<air.length;i++) {
-					for(int j=i+1;j<air.length;j++) {
-						if(air[i]!=null&&air[j]!=null) {
+				for(int j=i+1;j<air.length;j++) {
+					if(air[i]!=null&&air[j]!=null) {
 						if(air[i].getHtml()<air[j].getHtml()) {
 							Student a=air[i];
 							air[i]=air[j];
@@ -172,13 +172,13 @@ public class Administrator {
 		for(int i=0;i<air.length;i++) {
 			for(int j=i+1;j<air.length;j++) {
 				if(air[i]!=null&&air[j]!=null) {
-				if(air[i].getSum()<air[j].getSum()) {
-					Student a=air[i];
-					air[i]=air[j];
-					air[j]=a;
+					if(air[i].getSum()<air[j].getSum()) {
+						Student a=air[i];
+						air[i]=air[j];
+						air[j]=a;
+					}
 				}
 			}
 		}
-	}
 	}
 }
