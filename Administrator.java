@@ -1,7 +1,6 @@
 package cn.HolmesCraft.Six;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
 public class Administrator {
 
