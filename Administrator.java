@@ -1,23 +1,23 @@
-package cn.HolmesCraft.Six;
+﻿package cn.HolmesCraft.Six;
 
 import java.util.Scanner;
 
-public class Administrator {
+public class Administrator throws Exception{
 
 	static String msg="\t编号\t姓名\t年龄\tjava\tc#\thtml\tsql\t总分\t平均分";
 
 	Scanner Lol= new Scanner(System.in);
 
 
-	public int testInt() {     //测试输入字符是否为int类型，并录入
-		while(!Lol.hasNextInt()) {
+	public int testInt() throws Exception{     //测试输入字符是否为int类型，并录入
+		while(!Lol.hasNextInt()) throws Exception{
 			System.out.println("请输入一个自然数！");
 			Lol.next();	
 		}
 		return Lol.nextInt();
 	}
 
-	public boolean find(int on,Student[] air) {   //检测某编号是否有学生存在
+	public boolean find(int on,Student[] air) throws Exception{   //检测某编号是否有学生存在
 		if(0<=on&&on<air.length) {
 			for(int i=0;i<air.length;i++) {
 				if(air[i]!=null) {
@@ -33,7 +33,7 @@ public class Administrator {
 		return false;
 	}
 
-	public void export(Student[] air) { //打印学生表格
+	public void export(Student[] air) throws Exception{ //打印学生表格
 		System.out.println(msg);
 		for(int i=0;i<air.length;i++) {
 			if(air[i]!=null) {
@@ -42,7 +42,7 @@ public class Administrator {
 		}
 	}
 
-	public void create(String name,int age,Student[] air) {     //添加学生的方法
+	public void create(String name,int age,Student[] air) throws Exception{     //添加学生的方法
 		Student stu=new Student();
 		stu.setName(name);
 		stu.setAge(age);
@@ -54,7 +54,7 @@ public class Administrator {
 		}
 	}
 
-	public int testAir(Student[] air) {     //检测数组是否有空余,并返回空余数组的位置
+	public int testAir(Student[] air) throws Exception{     //检测数组是否有空余,并返回空余数组的位置
 		for(int i = 0;i<air.length;i++) {
 			if(air[i]==null) {
 				return i;
@@ -63,7 +63,7 @@ public class Administrator {
 		return 999999999;
 	}
 
-	public void select(int on,Student[] air) {   //查找某编号学生的方法
+	public void select(int on,Student[] air) throws Exception{   //查找某编号学生的方法
 		if(this.find(on, air)) {
 			System.out.println(msg);
 			System.out.println(air[on]);
@@ -72,7 +72,7 @@ public class Administrator {
 		}
 	}
 
-	public void update(int on,String name,int age,Student[] air) {   //更新学生基本信息的方法
+	public void update(int on,String name,int age,Student[] air) throws Exception{   //更新学生基本信息的方法
 		if(this.find(on, air)) {
 			air[on].setAge(age);
 			air[on].setName(name);
@@ -83,7 +83,7 @@ public class Administrator {
 		}
 	}
 
-	public void delete(int on,Student[] air) {  //删除学生的方法
+	public void delete(int on,Student[] air) throws Exception{  //删除学生的方法
 		if(this.find(on, air)) {
 			air[on]=null;
 			System.out.println(">>已删除");
@@ -92,7 +92,7 @@ public class Administrator {
 		}
 	}
 
-	public void input(int on,Student[] air) {  //输入学生成绩信息的方法
+	public void input(int on,Student[] air) throws Exception{  //输入学生成绩信息的方法
 		if(this.find(on, air)) {
 			System.out.println("请输入你的java成绩！");
 			air[on].setJava(this.testInt());
@@ -110,7 +110,7 @@ public class Administrator {
 		}
 	}
 
-	public void subject(int subject,Student[] air) {
+	public void subject(int subject,Student[] air) throws Exception{
 		switch(subject) {
 		case 1:
 			for(int i=0;i<air.length;i++) {
